@@ -1,0 +1,116 @@
+# Implementation Plan
+
+- [x] 1. Write bug condition exploration test
+  - **Property 1: Bug Condition** - Hardcoded Contact Data Detection
+  - **CRITICAL**: This test MUST FAIL on unfixed code - failure confirms the bug exists
+  - **DO NOT attempt to fix the test or the code when it fails**
+  - **NOTE**: This test encodes the expected behavior - it will validate the fix when it passes after implementation
+  - **GOAL**: Surface counterexamples that demonstrate hardcoded contact data exists in Sidebar.jsx
+  - **Scoped PBT Approach**: Scope the property to concrete failing cases - check for hardcoded strings in Sidebar.jsx
+  - Test implementation details:
+    - Read Sidebar.jsx file content
+    - Check for hardcoded email: `akashgautamm22@gmail.com`
+    - Check for hardcoded phone: `8077554658`
+    - Check for hardcoded incorrect LinkedIn: `https://www.linkedin.com/in/satyam-kumar-152840323/`
+    - Check for hardcoded incorrect GitHub: `https://github.com/SatyamKumarCS`
+    - Check for hardcoded avatar: `https://github.com/SatyamKumarCS.png`
+    - Assert that Sidebar.jsx should NOT contain these hardcoded strings (expected behavior after fix)
+  - Run test on UNFIXED code
+  - **EXPECTED OUTCOME**: Test FAILS (this is correct - it proves hardcoded data exists)
+  - Document counterexamples found (e.g., "Found hardcoded email at line 44", "Found incorrect GitHub URL at line 23")
+  - Mark task complete when test is written, run, and failure is documented
+  - _Requirements: 1.1, 1.2_
+
+- [x] 2. Write preservation property tests (BEFORE implementing fix)
+  - **Property 2: Preservation** - Visual and Functional Behavior Preservation
+  - **IMPORTANT**: Follow observation-first methodology
+  - Observe behavior on UNFIXED code for non-buggy aspects:
+    - Sidebar renders with correct CSS classes
+    - All links have correct href attributes (even if URLs are wrong)
+    - Email link uses mailto: protocol
+    - Phone link uses tel: protocol
+    - External links have target="_blank" and rel="noreferrer"
+    - Skills section renders all skill pills
+    - Achievements section displays badge images
+  - Write property-based tests capturing observed behavior patterns:
+    - Test that Sidebar component renders without errors
+    - Test that all expected CSS classes are present (sidebar, sidebar-avatar, sidebar-name, etc.)
+    - Test that link structure is preserved (a tags with proper attributes)
+    - Test that info items have correct SVG icons
+    - Test that skills and achievements sections exist
+  - Run tests on UNFIXED code
+  - **EXPECTED OUTCOME**: Tests PASS (this confirms baseline behavior to preserve)
+  - Mark task complete when tests are written, run, and passing on unfixed code
+  - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5_
+
+- [x] 3. Fix for inconsistent contact data updates
+
+  - [x] 3.1 Create centralized contact data structure in src/data.js
+    - Add `contactInfo` object with correct contact details:
+      - email: `akashgautamm22@gmail.com`
+      - phone: `8077554658`
+      - linkedin: `https://www.linkedin.com/in/akash-gautam-42ba31307/`
+      - github: `https://github.com/Akashgautam25`
+      - resume: `https://drive.google.com/file/d/1ayOjkNwV2cKutZAMME8peDT8tMdasAz3/view?usp=drive_link`
+    - Add `profileInfo` object with profile details:
+      - name: `Akash Gautam`
+      - username: `Akashgautam25`
+      - avatar: `https://github.com/Akashgautam25.png`
+      - bio: (keep existing bio text)
+      - location: `Newton School of Technology, Rishihood University`
+    - Add `skills` array with updated skills list:
+      - Express JS, GenAI, Git and Github, JavaScript, MongoDB, MySQL, Node.js, Pandas, Python, React, SQL, Tailwind CSS, TypeScript, UI/UX
+    - Add `projectsData` array with new project information:
+      - Hollywood Insights: A Cinematic Analysis
+      - Washington King County House Sales
+      - Airbnb Analytics Dashboard
+      - Netflix Dashboard
+    - Export all data structures
+    - _Bug_Condition: Contact data is hardcoded in Sidebar.jsx (lines 15, 23, 30, 44, 51) instead of centralized_
+    - _Expected_Behavior: Contact data exists in src/data.js and is imported by components_
+    - _Preservation: Existing projects array structure is maintained (3.5)_
+    - _Requirements: 1.1, 2.1, 2.2, 2.3_
+
+  - [x] 3.2 Update Sidebar.jsx to use centralized data
+    - Import contactInfo, profileInfo, and skills from src/data.js
+    - Replace hardcoded avatar URL with profileInfo.avatar
+    - Replace hardcoded name with profileInfo.name
+    - Replace hardcoded username with profileInfo.username
+    - Replace hardcoded bio with profileInfo.bio
+    - Replace hardcoded resume link with contactInfo.resume
+    - Replace hardcoded GitHub link with contactInfo.github
+    - Replace hardcoded LinkedIn link with contactInfo.linkedin
+    - Replace hardcoded email with contactInfo.email
+    - Replace hardcoded phone with contactInfo.phone
+    - Replace hardcoded location with profileInfo.location
+    - Replace hardcoded skills array with skills.map() rendering
+    - Maintain all existing CSS classes and JSX structure
+    - _Bug_Condition: Sidebar.jsx contains hardcoded contact strings_
+    - _Expected_Behavior: Sidebar.jsx imports and uses centralized data_
+    - _Preservation: Visual appearance (3.1), link functionality (3.2), component structure (3.4) unchanged_
+    - _Requirements: 1.1, 2.1, 2.2, 2.3, 3.1, 3.2, 3.4_
+
+  - [x] 3.3 Verify bug condition exploration test now passes
+    - **Property 1: Expected Behavior** - No Hardcoded Contact Data
+    - **IMPORTANT**: Re-run the SAME test from task 1 - do NOT write a new test
+    - The test from task 1 encodes the expected behavior (no hardcoded strings)
+    - When this test passes, it confirms the expected behavior is satisfied
+    - Run bug condition exploration test from step 1
+    - **EXPECTED OUTCOME**: Test PASSES (confirms hardcoded data is removed)
+    - _Requirements: 2.1, 2.2, 2.3_
+
+  - [x] 3.4 Verify preservation tests still pass
+    - **Property 2: Preservation** - Visual and Functional Behavior Preserved
+    - **IMPORTANT**: Re-run the SAME tests from task 2 - do NOT write new tests
+    - Run preservation property tests from step 2
+    - **EXPECTED OUTCOME**: Tests PASS (confirms no regressions)
+    - Confirm all tests still pass after fix (no regressions in visual appearance, link functionality, component structure)
+    - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5_
+
+- [x] 4. Checkpoint - Ensure all tests pass
+  - Run all tests to verify:
+    - Bug condition test passes (no hardcoded data)
+    - Preservation tests pass (visual and functional behavior preserved)
+    - Application runs without errors
+    - Hot reload works correctly
+  - Ask the user if questions arise
