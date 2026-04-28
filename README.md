@@ -60,9 +60,8 @@ npm run dev
 
 ## 📫 Contact Information
 
-
-📧 [akash.gautam2024@nst.rishihood.edu.in](mailto:akash.gautam2024@nst.rishihood.edu.in)
-🔗 [LinkedIn](https://www.linkedin.com/in/akash-gautam-42ba31307/)
+📧 [Email](mailto:akash.gautam2024@nst.rishihood.edu.in)<br>
+🔗 [LinkedIn](https://www.linkedin.com/in/akash-gautam-42ba31307/)<br>
 💻 [GitHub](https://github.com/Akashgautam25)
 
 
