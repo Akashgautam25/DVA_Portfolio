@@ -1,65 +1,70 @@
-# Data Analytics & Software Portfolio
+# 🚀 Data Analytics & Software Portfolio
 
+Welcome to my portfolio! This project is a modern, responsive web application built with React and Vite, designed to showcase my work in Data Analytics and basic Software Development. The interface is inspired by the clean and functional design of GitHub.
 
-Welcome to my portfolio! This project is a modern, responsive web application built with **React** and **Vite**, designed to showcase my expertise in Data Analytics, Python, and Full-Stack Development. The interface is inspired by the sleek and functional design of GitHub.
+---
 
-## About Me
-**Satyam Kumar**  
-*Data Analytics Enthusiast | Newton School of Technology, Rishihood University*
+## 👤 About Me
 
-I specialize in extracting actionable insights from complex datasets and building interactive dashboards that drive decision-making. My skillset spans from core data tools like **Excel** and **Tableau** to programming with **Python** and full-stack development.
+**Akash Kumar Gautam**
+Data Analytics Enthusiast | Newton School of Technology, Rishihood University
 
-## Key Features
-- **Dynamic Project Filtering**: Categorize and view projects based on the tools used (Tableau, Python, Excel, etc.).
-- **Interactive Dashboards**: Direct links to live Tableau Public visualizations and Google Sheets.
-- **GitHub Integration**: A stylized repository list that mirrors the GitHub UI for a familiar, professional look.
-- **Responsive Design**: Fully optimized for mobile and desktop viewing.
-- **Contribution Graph**: A visual representation of activity and consistency.
+I focus on analyzing data, building interactive dashboards, and understanding patterns in datasets. I enjoy working with tools like Tableau, Excel, and basic web technologies to create simple and effective solutions.
 
-## Tech Stack
-- **Languages**: Python (Pandas, NumPy, Matplotlib, OpenCV), JavaScript, TypeScript, Java, SQL
-- **Frontend**: React.js, Next.js, Vite, HTML, CSS
-- **Backend & Tools**: Node.js, Express, Prisma ORM, PostgreSQL, MySQL, Nginx
-- **Cloud & DevOps**: AWS, Docker, Kubernetes, GitHub Actions, Git
-- **AI & ML**: Generative AI, LangChain, LangGraph, Hugging Face
-- **Testing**: Jest, Cypress, Playwright
-- **Methodology**: Agile Principles & Scrum
-- **Analytics Tools**: Tableau, Excel, Google Sheets
+---
 
-## Featured Projects
-- **British Airways Analytics**: Passenger review analysis and insights dashboard.
-- **Credit Card Complaints Analysis**: Comprehensive dashboard highlighting resolution efficiency.
-- **Covid-19 Analytics**: India-specific trend tracking and recovery analysis.
-- **Road Accident Analytics**: Pattern identification and risk factor analysis.
-- **Amazon PrimeVideo Analytics**: Catalog EDA examining genres and ratings.
-- **Real Estate Market Analysis**: Excel-based investment strategy and trend evaluation.
+## ✨ Key Features
 
-## Getting Started
+* 🔍 Dynamic Project Filtering (Tableau, Python, Excel)
+* 📊 Interactive Dashboards (Tableau Public links)
+* 💻 GitHub-style Portfolio UI
+* 📱 Responsive Design (mobile + desktop)
+* 📈 Clean project showcase with insights
+
+---
+
+## 🛠️ Tech Stack
+
+**Languages:** JavaScript, Python, SQL
+**Frontend:** React.js, Vite, HTML, CSS, Tailwind CSS
+**Backend (Basics):** Node.js, Express
+**Tools:** Tableau, Excel, Git, GitHub
+
+---
+
+## 📂 Featured Projects
+
+* 🎬 **Hollywood Insights Dashboard** — Analysis of movie performance and ratings
+* 🏡 **House Sales Dashboard** — Pricing trends and property insights
+* 🏠 **Airbnb Data Analysis** — Listing trends and location-based pricing
+
+---
+
+## ⚙️ Getting Started
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/) (v16.0.0 or higher)
-- npm or yarn
+
+* Node.js (v16 or higher)
+* npm or yarn
 
 ### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/SatyamKumarCS/DVA_Portfolio.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd DVA_Portfolio
-   ```
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-4. Start the development server:
-   ```bash
-   npm run dev
-   ```
 
-## Contact Information
-- **Email**: [satyamkumarch15@gmail.com](mailto:satyamkumarch15@gmail.com)
-- **LinkedIn**: [satyam-kumar-152840323](https://www.linkedin.com/in/satyam-kumar-152840323/)
-- **GitHub**: [@SatyamKumarCS](https://github.com/SatyamKumarCS)
+```bash
+git clone https://github.com/Akashgautam25/DVA_Portfolio.git
+cd DVA_Portfolio
+npm install
+npm run dev
+```
 
+---
+
+## 📫 Contact Information
+
+📧 [akash.gautam2024@nst.rishihood.edu.in](mailto:akash.gautam2024@nst.rishihood.edu.in)
+🔗 LinkedIn | GitHub
+
+---
+
+## 🌐 Live Portfolio
+
+👉 https://akashgautam25.github.io/DVA_Portfolio/
