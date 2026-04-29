@@ -79,7 +79,7 @@ const projects = [
   {
     name: "OpenSky Network Analysis",
     description: "Analysis of flight data from OpenSky Network, exploring aviation patterns and air traffic insights.",
-    image: `${base}Hollywood.png`,
+    image: `${base}OpenSky.png`,
     tags: ["Python", "Data Analytics"],
     github: "https://github.com/Akashgautam25/SectionE_G-8_opensky_analysis",
     live: "#" // Placeholder - update with live link when available
